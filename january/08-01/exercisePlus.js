@@ -39,6 +39,7 @@ print(strEx3Middle);
 let str = "It is niCe to pRaCtIcE my JavaScript SKILLS";
 const strToUpper = () => {
   let backToStr;
+  let text = 
   let newToArr = str.split(" ");
   console.log(newToArr);
   //for (let i = 0; i < newToArr.length; i++) {
