@@ -1,6 +1,0 @@
-[submodule "small-app-thesergioliveira"]
-	path = small-app-thesergioliveira
-	url = git@github.com:Fbw-48/small-app-thesergioliveira.git
-[submodule "let-s-practice-thesergioliveira"]
-	path = let-s-practice-thesergioliveira
-	url = git@github.com:Fbw-48/let-s-practice-thesergioliveira.git
