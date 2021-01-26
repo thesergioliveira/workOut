@@ -17,6 +17,14 @@ Both arrays will be the same length.
 All values and their counterparts will always be of the same data type.
 If the two arrays are the same, return false. */
 
+const isFistSuperior = array => {
+    if ()
+
+    return ;
+}
+
+console.log(isFistSuperior());
+
 console.log("----ToCamelCase--------");
 
 /* Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case). */
