@@ -17,13 +17,13 @@ Both arrays will be the same length.
 All values and their counterparts will always be of the same data type.
 If the two arrays are the same, return false. */
 
-const isFistSuperior = array => {
+/* const isFistSuperior = array => {
     if ()
 
     return ;
 }
 
-console.log(isFistSuperior());
+console.log(isFistSuperior()); */
 
 console.log("----ToCamelCase--------");
 
@@ -52,3 +52,30 @@ function toCamelCase(str) {
 console.log(toCamelCase("The_Stealth_Warrior"));
 console.log(toCamelCase(""));
 console.log(toCamelCase("The_Stealth_Warrior"));
+
+console.log("----getDecimal--------");
+/* Write a function getDecimal(n) that returns only the decimal part of the given number.
+
+You only have to handle valid numbers, not Infinity, NaN, or similar. Always return a positive decimal part. */
+
+/* getDecimal(2.4)  === 0.4
+getDecimal(-0.2) === 0.2 */
+
+function getDecimal(n) {
+  let output = [];
+  let finalOutput;
+  let newN = n.toString().split("").reverse();
+  for (let i = 0; i < newN.length; i++) {
+    let element = newN[i];
+    if (element == ".") {
+      break;
+    } else {
+      output.push(element);
+    }
+  }
+  console.log(output);
+  finalOutput = "0." + output.reverse().join("");
+  console.log(finalOutput);
+  return Number(finalOutput);
+}
+console.log(getDecimal(2.00001));
