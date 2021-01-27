@@ -73,9 +73,7 @@ function getDecimal(n) {
       output.push(element);
     }
   }
-  console.log(output);
   finalOutput = "0." + output.reverse().join("");
-  console.log(finalOutput);
   return Number(finalOutput);
 }
 console.log(getDecimal(2.00001));
@@ -88,7 +86,7 @@ It should remove all values from list a, which are present in list b. */
 If a value is present in b, all of its occurrences must be removed from the other:
 arrayDiff([1,2,2,2,3],[2]) == [1,3] */
 
-const arrayDif = (array, arr) => {
+const arrayDiff = (array, arr) => {
   let output = [];
   let newArrar = array.map((item) => {
     if (!arr.includes(item)) {
@@ -97,8 +95,5 @@ const arrayDif = (array, arr) => {
     return output;
   });
   return output;
-  // if (!arr.includes(item)) {
-  //  output.push(item);
-  // }
 };
-console.log(arrayDif([1, 2, 2, 2, 3], [2]));
+console.log(arrayDiff([1, 2, 2, 2, 3], [2]));
