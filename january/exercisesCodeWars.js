@@ -206,3 +206,77 @@ console.log(wordsToMarks("friends"));
 console.log(wordsToMarks("family"));
 console.log(wordsToMarks("selfness"));
 console.log(wordsToMarks("knowledge"));
+
+console.log("-----makeChocolate--------");
+
+const makeChocolates = (small, big, goal) => {
+  let value;
+  if (big == 0) {
+    value = 0;
+  } else if (goal < 5 && goal % 2 == 0 && goal != 0) {
+    value = goal / 2;
+  } else if (goal == 5) {
+    value = 0;
+  } else if (goal > 5 && goal % 2 == 0) {
+    if (small * 2) value = goal / 2;
+  } else if (goal > 5 && goal % 2 !== 0) {
+    value = (goal - 5) / 2;
+  } else {
+    value = 0;
+  }
+  return value <= small && value !== 0 ? value : -1;
+};
+
+console.log(makeChocolates(4, 1, 13));
+console.log(makeChocolates(5, 2, 19));
+console.log(makeChocolates(8, 0, 7));
+console.log(makeChocolates(4, 1, 14));
+
+//Some ideas to try later
+/* let value;
+
+
+  let newSmall = small * 2;
+  let newBig = big * 5;
+  let i = 0;
+  do {
+      goal = goal - big 
+      
+
+  } while goal > newSmall
+  return ;    */
+
+console.log("-----partsSums--------");
+
+/*   Let us consider this example (array written in general format):
+
+ls = [0, 1, 3, 6, 10]
+
+Its following parts:
+
+ls = [0, 1, 3, 6, 10]
+ls = [1, 3, 6, 10]
+ls = [3, 6, 10]
+ls = [6, 10]
+ls = [10]
+ls = []
+The corresponding sums are (put together in a list): [20, 20, 19, 16, 10, 0] */
+
+const partsSums = (arr) => {
+  let newArr = arr.slice();
+  let sumArr = [];
+  let zero = [0];
+
+  for (let i = 0; i < arr.length; i++) {
+    //console.log(newArr);
+    sumArr.push(newArr.reduce((acc, item) => (acc += item)));
+    //console.log(arr);
+    newArr.shift(arr[i]);
+  }
+
+  return sumArr.concat(zero);
+};
+
+console.log(
+  partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358])
+);
