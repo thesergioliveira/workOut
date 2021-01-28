@@ -97,3 +97,112 @@ const arrayDiff = (array, arr) => {
   return output;
 };
 console.log(arrayDiff([1, 2, 2, 2, 3], [2]));
+
+/* If　a = 1, b = 2, c = 3 ... z = 26
+
+Then l + o + v + e = 54
+
+and f + r + i + e + n + d + s + h + i + p = 108
+
+So friendship is twice stronger than love :-)
+
+The input will always be in lowercase and never be empty. */
+
+function wordsToMarks(string) {
+  return string
+    .toLowerCase()
+    .split("")
+    .map((item) => {
+      switch (item) {
+        case "a":
+          item = 1;
+          break;
+        case "b":
+          item = 2;
+          break;
+        case "c":
+          item = 3;
+          break;
+        case "d":
+          item = 4;
+          break;
+        case "e":
+          item = 5;
+          break;
+        case "f":
+          item = 6;
+          break;
+        case "g":
+          item = 7;
+          break;
+        case "h":
+          item = 8;
+          break;
+        case "i":
+          item = 9;
+          break;
+        case "j":
+          item = 10;
+          break;
+        case "k":
+          item = 11;
+          break;
+        case "l":
+          item = 12;
+          break;
+        case "m":
+          item = 13;
+          break;
+        case "n":
+          item = 14;
+          break;
+        case "o":
+          item = 15;
+          break;
+        case "p":
+          item = 16;
+          break;
+        case "q":
+          item = 17;
+          break;
+        case "r":
+          item = 18;
+          break;
+        case "s":
+          item = 19;
+          break;
+        case "t":
+          item = 20;
+          break;
+        case "u":
+          item = 21;
+          break;
+        case "v":
+          item = 22;
+          break;
+        case "w":
+          item = 23;
+          break;
+        case "x":
+          item = 24;
+          break;
+        case "y":
+          item = 25;
+          break;
+        case "z":
+          item = 26;
+          break;
+        default:
+          return `Something went wrong!`;
+          break;
+      }
+      return item;
+    })
+    .reduce((acc, item) => (acc += item));
+}
+
+console.log(wordsToMarks("attitude"));
+console.log(wordsToMarks("friends"));
+console.log(wordsToMarks("family"));
+console.log(wordsToMarks("selfness"));
+console.log(wordsToMarks("knowledge"));
