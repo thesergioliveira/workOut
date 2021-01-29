@@ -268,9 +268,7 @@ const partsSums = (arr) => {
   let zero = [0];
 
   for (let i = 0; i < arr.length; i++) {
-    //console.log(newArr);
     sumArr.push(newArr.reduce((acc, item) => (acc += item)));
-    //console.log(arr);
     newArr.shift(arr[i]);
   }
 
@@ -280,3 +278,32 @@ const partsSums = (arr) => {
 console.log(
   partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358])
 );
+
+console.log("-----averages--------");
+/* #Get the averages of these numbers
+
+Write a method, that gets an array of integer-numbers and return an array of the averages of each integer-number and his follower, if there is one.
+
+Example:
+
+Input:  [ 1, 3, 5, 1, -10]
+Output:  [ 2, 4, 3, -4.5]
+If the array has 0 or 1 values or is null, your method should return an empty array.
+
+Have fun coding it and please don't forget to vote and rank this kata! :-) */
+
+const averages = (numbers) => {
+  let output = [];
+  let newNumber;
+  if (numbers == null || numbers.length < 2) {
+    return output;
+  } else {
+    newNumber = numbers.map((item, i, arr) => {
+      if (i !== arr.length - 1) {
+        output.push((item = (item + arr[i + 1]) / 2));
+      }
+    });
+    return output;
+  }
+};
+console.log(averages([1, 3, 5, 1, -10]));
