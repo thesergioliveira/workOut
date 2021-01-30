@@ -250,7 +250,7 @@ console.log("-----partsSums--------");
 
 /*   Let us consider this example (array written in general format):
 
-ls = [0, 1, 3, 6, 10]
+ls = 
 
 Its following parts:
 
@@ -262,21 +262,62 @@ ls = [10]
 ls = []
 The corresponding sums are (put together in a list): [20, 20, 19, 16, 10, 0] */
 
-const partsSums = (arr) => {
+const partsSums1 = (array) => {
+  const reducer = (arr) => {
+    let acc = 0;
+    for (let i = 0; i < array.length; i++) {
+      acc += arr[i];
+    }
+
+    return acc;
+  };
+
+  let sumArr = array.slice();
+  let output = array.map((item, i, arr) => {
+    item = reducer(sumArr);
+    sumArr.shift(i);
+    return item;
+  });
+  return output.concat(0);
+};
+console.log(partsSums1([0, 1, 3, 6, 10]));
+
+console.log("----Alternative Solution 2---------------");
+
+const partsSums = (array) => {
+  let output = [];
+  let sumArr = array.slice();
+  let acc;
+
+  for (let i = 0; i < array.length; i++) {
+    acc = 0;
+    for (let j = 0; j < sumArr.length; j++) {
+      acc += sumArr[j];
+    }
+    output.push(acc);
+    sumArr.shift(sumArr[i]);
+  }
+
+  return output.concat(0);
+};
+console.log(partsSums([0, 1, 3, 6, 10]));
+
+console.log("--------Alternative Solution------------");
+
+const partsSums2 = (arr) => {
   let newArr = arr.slice();
   let sumArr = [];
-  let zero = [0];
 
   for (let i = 0; i < arr.length; i++) {
     sumArr.push(newArr.reduce((acc, item) => (acc += item)));
     newArr.shift(arr[i]);
   }
 
-  return sumArr.concat(zero);
+  return sumArr.concat(0);
 };
 
 console.log(
-  partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358])
+  partsSums2([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358])
 );
 
 console.log("-----averages--------");
