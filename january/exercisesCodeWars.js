@@ -348,3 +348,273 @@ const averages = (numbers) => {
   }
 };
 console.log(averages([1, 3, 5, 1, -10]));
+
+/* Given a string, turn each character into its ASCII character code and join them together to create a number - let's call this number total1:
+
+'ABC' --> 'A' = 65, 'B' = 66, 'C' = 67 --> 656667
+Then replace any incidence of the number 7 with the number 1, and call this number 'total2':
+
+total1 = 656667
+total2 = 656661
+*/
+
+const calc = (x) => {
+  let finalTotal1;
+  let total2;
+  let finalTotal2;
+  let total1 = x
+
+    .split("")
+    .map((item) => {
+      switch (item) {
+        case "A":
+          item = 65;
+          break;
+        case "B":
+          item = 66;
+          break;
+        case "C":
+          item = 67;
+          break;
+        case "D":
+          item = 68;
+          break;
+        case "E":
+          item = 69;
+          break;
+        case "F":
+          item = 70;
+          break;
+        case "G":
+          item = 71;
+          break;
+        case "H":
+          item = 72;
+          break;
+        case "I":
+          item = 73;
+          break;
+        case "J":
+          item = 74;
+          break;
+        case "K":
+          item = 75;
+          break;
+        case "L":
+          item = 76;
+          break;
+        case "M":
+          item = 77;
+          break;
+        case "N":
+          item = 78;
+          break;
+        case "O":
+          item = 79;
+          break;
+        case "P":
+          item = 80;
+          break;
+        case "Q":
+          item = 81;
+          break;
+        case "R":
+          item = 82;
+          break;
+        case "S":
+          item = 83;
+          break;
+        case "T":
+          item = 84;
+          break;
+        case "U":
+          item = 85;
+          break;
+        case "V":
+          item = 86;
+          break;
+        case "W":
+          item = 87;
+          break;
+        case "X":
+          item = 88;
+          break;
+        case "Y":
+          item = 89;
+          break;
+        case "Z":
+          item = 90;
+          break;
+        case "a":
+          item = 97;
+          break;
+        case "b":
+          item = 98;
+          break;
+        case "c":
+          item = 99;
+          break;
+        case "d":
+          item = 100;
+          break;
+        case "e":
+          item = 101;
+          break;
+        case "f":
+          item = 102;
+          break;
+        case "g":
+          item = 103;
+          break;
+        case "h":
+          item = 104;
+          break;
+        case "i":
+          item = 105;
+          break;
+        case "j":
+          item = 106;
+          break;
+        case "k":
+          item = 107;
+          break;
+        case "l":
+          item = 108;
+          break;
+        case "m":
+          item = 109;
+          break;
+        case "n":
+          item = 110;
+          break;
+        case "o":
+          item = 110;
+          break;
+        case "p":
+          item = 112;
+          break;
+        case "q":
+          item = 113;
+          break;
+        case "r":
+          item = 114;
+          break;
+        case "s":
+          item = 115;
+          break;
+        case "t":
+          item = 116;
+          break;
+        case "u":
+          item = 117;
+          break;
+        case "v":
+          item = 118;
+          break;
+        case "w":
+          item = 119;
+          break;
+        case "x":
+          item = 120;
+          break;
+        case "y":
+          item = 121;
+          break;
+        case "z":
+          item = 122;
+          break;
+
+        default:
+          item = `There was a mistake processing the application`;
+          break;
+      }
+      return item;
+    })
+    .join("");
+
+  total2 = total1
+    .split("")
+    .map((item) => {
+      if (item == 7) {
+        item = 1;
+      }
+      return item;
+    })
+    .join("");
+  console.log(typeof total1);
+  console.log(typeof total2);
+  console.log(total1);
+  console.log(total2);
+
+  finalTotal1 = Array.from(String(total1), Number).reduce(
+    (acc, item) => (acc += item)
+  );
+
+  finalTotal2 = Array.from(String(total2), Number).reduce(
+    (acc, item) => (acc += item)
+  );
+
+  console.log(`finalTotal1 ${finalTotal1}, finalTotal2 ${finalTotal2}.`);
+
+  return finalTotal1 - finalTotal2;
+};
+
+console.log(calc("ABC"));
+console.log(calc("abcdef"));
+console.log(calc("aaaaaddddr"));
+console.log(calc("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+
+/* 
+Consider the string "adfa" and the following rules:
+
+a) each character MUST be changed either to the one before or the one after in alphabet. 
+b) "a" can only be changed to "b" and "z" to "y". 
+"adfa" -> ["begb","beeb","bcgb","bceb"]
+
+Here is another example: 
+"bd" -> ["ae","ac","ce","cc"]
+
+--We see that in each example, one of the outcomes is a palindrome. That is, "beeb" and "cc".
+
+You will be given a lowercase string and your task is to return True if at least one of the outcomes is a palindrome or False otherwise.
+
+More examples in test cases. Good luck! */
+
+function solve(word) {
+  let bool;
+  let alphabet = "abcdefghijklmnopqrstuvxwyz";
+  let opsWord = word.split("").reverse().join("");
+  let word1 = word
+    .split("")
+    .map((item, i) => {
+      if (i % 2 == 0) {
+        item = alphabet[alphabet.indexOf(item) - 1];
+      } else {
+        item = alphabet[alphabet.indexOf(item) + 1];
+      }
+      return item !== undefined ? item : "";
+    })
+    .join("");
+  let word2 = word
+    .split("")
+    .map((item, i) => {
+      if (i % 2 == 0) {
+        item = alphabet[alphabet.indexOf(item) + 1];
+      } else {
+        item = alphabet[alphabet.indexOf(item) - 1];
+      }
+      return item !== undefined ? item : "";
+    })
+    .join("");
+  console.log(`${word1} ${word2} ${opsWord}`);
+
+  if (word == opsWord) {
+    return (bool = true);
+  } else {
+    return (bool = false);
+  }
+}
+console.log(solve("adfa"));
+//console.log(solve("abba"));
+//console.log(solve("sq"));
+//console.log(solve("ae"));
