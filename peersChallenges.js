@@ -39,7 +39,6 @@ print(strEx3Middle);
 let str = "It is niCe to pRaCtIcE my JavaScript SKILLS";
 const strToUpper = () => {
   let backToStr;
-  let text = 
   let newToArr = str.split(" ");
   console.log(newToArr);
   //for (let i = 0; i < newToArr.length; i++) {
@@ -155,7 +154,182 @@ roundDown(12.7);
 roundDown(199.2);
 
 console.log("----------------Exercise 13--------------------------");
-// 13- Create an anagram (rearrange letters in a word).
+//Addition. Write a program to add up the numbers 1 to 20.
 
+const addUp = () => {
+  let i = 1;
+  while (i < 20) {
+    console.log(i);
+    i++;
+  }
+  return i;
+};
+console.log(addUp());
 console.log("----------------Exercise 14--------------------------");
-// 14- Confuse me with your genius. Create a function. (Show me your answer. We can vote for the most confusing one.)
+// There are i bottles of beer on the wall. write a program that will output, "There is one bottle of beer on the wall." "There are two bottles of beer" up until there are five bottles.
+
+function bottles() {
+  for (let i = 1; i <= 5; i++) {
+    console.log(
+      i == 1
+        ? `There is 1 bottle of beer on the wall`
+        : `There are ${i} bottle of beer on the wall`
+    );
+  }
+  return `Well done!`;
+}
+console.log(bottles());
+
+console.log("----------------Exercise 15--------------------------");
+// The odd/even reporter: Write a program that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd, and report that to the screen(e.g. "2 is even").
+
+const reporter = () => {
+  for (let i = 0; i <= 20; i++) {
+    if (i % 2 == 0) {
+      console.log(`${i} is even.`);
+    } else {
+      console.log(`${i} is odd.`);
+    }
+  }
+  return `Finished!`;
+};
+console.log(reporter());
+
+console.log("----------------Exercise 16--------------------------");
+// Multiplication Tables. Write a program that will iterate from 0 to 10. For each iteration, of the loop, it will multiply the number by 9 and log the result (e.g. "2 *9 = 18"). Bonus: Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total).
+
+function multiplier() {
+  for (let i = 0; i <= 9; i++) {
+    console.log(` ${i} * 9 = ${i * 9}`);
+  }
+  return `Finished!`;
+}
+console.log(multiplier());
+
+//Bonus:
+
+function multiplierComplete() {
+  for (let i = 1; i <= 10; i++) {
+    console.log(`======Table of ${i} ========`);
+    for (let j = 0; j <= 10; j++) {
+      console.log(`${i}* ${j} = ${i * j}`);
+    }
+  }
+  return `Finished!`;
+}
+console.log(multiplierComplete());
+
+console.log("----------------Exercise 17--------------------------");
+// Fizz Buzz Write a program which iterates the integers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five prints "Buzz". For Numbers which are multiples of both three and five "FizzBuzz".
+
+const fizzBuzz = () => {
+  let i = 1;
+  do {
+    console.log(
+      i % 3 == 0 && i % 5 == 0
+        ? `FizzBuzz`
+        : i % 3 == 0
+        ? `Fizz`
+        : i % 5 == 0
+        ? `Buzz`
+        : `${i}`
+    );
+    i++;
+  } while (i <= 100);
+  return `Finished!`;
+};
+console.log(fizzBuzz());
+
+console.log("----------------Exercise 18--------------------------");
+// Sum of Multiples: Write a program to add the multiples of 3 and 5 under 1000.
+
+function sumMultiples() {
+  let i = 1;
+  let value = 0;
+  while (i <= 100) {
+    if (i % 3 == 0 || i % 5 == 0) {
+      value += i;
+    }
+    i++;
+  }
+  return `${value}`;
+}
+
+console.log(sumMultiples());
+
+console.log("----------------Exercise 19--------------------------");
+// Write programs that produce the following outputs:
+
+const outputOne = () => {
+  let text = "";
+  for (let i = 1; i <= 10; i++) {
+    text += i + "00 ";
+  }
+  return text;
+};
+
+console.log(outputOne());
+
+function outputTwo() {
+  let i = 0;
+  let text = "";
+  while (i <= 15) {
+    i += 3;
+    i <= 15 ? (text += i + " ") : i;
+  }
+
+  return text;
+}
+console.log(outputTwo());
+
+const outputThree = () => {
+  let i = 9;
+  let text = "";
+  do {
+    text += i + " ";
+    i--;
+  } while (i >= 0);
+  return text;
+};
+console.log(outputThree());
+
+function outputFour() {
+  let i = 1;
+  let text = "";
+  while (i <= 4) {
+    let j = 1;
+    while (j <= 3) {
+      text += i + " ";
+      j++;
+    }
+    i++;
+  }
+
+  return text;
+}
+console.log(outputFour());
+
+const outputFive = () => {
+  let text = "";
+  for (let i = 0; i <= 2; i++) {
+    for (let j = 0; j <= 4; j++) {
+      text += j + " ";
+    }
+  }
+  return text;
+};
+console.log(outputFive());
+
+console.log("----------------Exercise 20--------------------------");
+// IsPalindrom. Write a program to check whether a word is a palindrome or not. Note: A palindrome is a word, phrase or sequence that reads the same backwards as forwards, e.g. madam or tarrattarrat.
+
+function isPalindrome(str) {
+  let text = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    text += str[i];
+  }
+  return text == str ? true : false;
+}
+
+//return counter == str.length ? true : false;
+console.log(isPalindrome("madam"));
