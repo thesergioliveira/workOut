@@ -330,6 +330,4 @@ function isPalindrome(str) {
   }
   return text == str ? true : false;
 }
-
-//return counter == str.length ? true : false;
 console.log(isPalindrome("madam"));
