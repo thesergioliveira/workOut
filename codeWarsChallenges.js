@@ -596,7 +596,6 @@ function solve(word) {
     })
     .join("");
   let word2 = word
-    .split("")
     .map((item, i) => {
       if (i % 2 == 0) {
         item = alphabet[alphabet.indexOf(item) + 1];
