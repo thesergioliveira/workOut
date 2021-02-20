@@ -580,7 +580,7 @@ You will be given a lowercase string and your task is to return True if at least
 
 More examples in test cases. Good luck! */
 
-function solve(word) {
+/* function solve(word) {
   let bool;
   let alphabet = "abcdefghijklmnopqrstuvxwyz";
   let opsWord = word.split("").reverse().join("");
@@ -613,7 +613,7 @@ function solve(word) {
     return (bool = false);
   }
 }
-console.log(solve("adfa"));
+console.log(solve("adfa")); */
 //console.log(solve("abba"));
 //console.log(solve("sq"));
 //console.log(solve("ae"));
