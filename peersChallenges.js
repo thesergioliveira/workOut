@@ -331,3 +331,10 @@ function isPalindrome(str) {
   return text == str ? true : false;
 }
 console.log(isPalindrome("madam"));
+
+console.log("----------------Exercise 21--------------------------");
+function redundant(str) {
+  let myFunction = () => str;
+  return myFunction();
+}
+console.log(redundant("apple"));
