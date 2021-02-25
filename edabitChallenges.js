@@ -64,7 +64,7 @@ console.log(possibleBonus(3, 7));
 console.log(possibleBonus(0, 6));
 console.log(possibleBonus(1, 6));
 console.log(possibleBonus(2, 6));
-console.log(possibleBonus(3, 6);)
+console.log(possibleBonus(3, 6));
 console.log(possibleBonus(4, 6));
 console.log(possibleBonus(5, 6)); 
 console.log(possibleBonus(6, 6)); 
