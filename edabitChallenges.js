@@ -108,8 +108,8 @@ class Rectangle {
   string() {
     console.log(`[x=${this.x}, y= ${this.y}, width =${this.width}, height=${this.height}]`)
      }
-  }
-
+  
+}
 let recOne = new Rectangle(1, 2, 3, 4);
 recOne.string();
 
@@ -126,5 +126,4 @@ function derivative(b, m) {
   n = b -1;
   return b * (m ** n);
 }
-
 console.log(derivative(3, -2));
