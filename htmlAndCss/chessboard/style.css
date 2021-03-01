@@ -4,11 +4,13 @@
     padding: 0;
 }
 table{
-    width: 100vw;
-    height: 100vh;
+    width: 98vw;
+    height: 98vh;
+    margin: 1rem auto;
+    border: 5px solid  black;
 }
 table tr:nth-child(odd) td:nth-child(even), table tr:nth-child(even) td:nth-child(odd) {
-    background: black;
+    background: lightgray;
     transition: all 1.5s;
 }
 td:hover{
