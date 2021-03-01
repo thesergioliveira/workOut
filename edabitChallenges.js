@@ -127,3 +127,19 @@ function derivative(b, m) {
   return b * (m ** n);
 }
 console.log(derivative(3, -2));
+console.log("-------------exercise 6---------------");
+var twoSum = function(nums, target) {
+  let result = [];
+  for (let i =0; i< nums.length; i++){
+      for (let j=0; j<nums.length; j++){
+          if (!result.includes(nums[i]) && !result.includes(nums[j]) && nums[i] != nums[j] && nums[i] + nums[j] == target) {
+              result.push(i, j);
+              
+          }
+      }
+  }
+  
+  return result;
+};
+
+console.log(twoSum([2,7,11,15], 9));
