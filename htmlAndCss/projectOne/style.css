@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+table{
+    width: 100vw;
+    height: 100vh;
+}
+table tr:nth-child(odd) td:nth-child(even), table tr:nth-child(even) td:nth-child(odd) {
+    background: black;
+    transition: all 1.5s;
+}
+td:hover{
+    transform: scale(1.2);
+}
