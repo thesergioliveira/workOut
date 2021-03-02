@@ -3,3 +3,43 @@
     margin: 0;
     padding: 0;
 }
+
+body{
+    text-align: center;
+}
+
+main{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+}
+
+section{
+    border: 2px solid brown;
+    display: inline-block;
+    width: 30vw;
+    margin: auto;
+
+}
+
+h3{
+    height: 7vh;
+    background-color: rgb(180, 86, 86);
+    color: white;
+    font-size: 3vw;
+}
+div{
+    font-size: 2.5vw;
+}
+
+.text{
+    margin-bottom: 10px;
+}
+
+
+
+img{
+    width: 90%;
+    
+}
+
