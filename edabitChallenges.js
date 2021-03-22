@@ -143,3 +143,28 @@ var twoSum = function(nums, target) {
 };
 
 console.log(twoSum([2,7,11,15], 9));
+
+console.log("------------exercise 7-------------");
+
+// Given an integer x, return true if x is palindrome integer.
+// An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
+// Example 1:
+// Input: x = 121
+// Output: true
+
+const isPalindrome = (num) =>{
+  let newNum = [...num + ""].map(n=>+n);
+  let i = newNum.length-1;
+  let reverseNum = ""
+  do {
+      reverseNum += newNum[i];
+      i--;
+  } while(i >= 0)
+
+  return reverseNum == num ? true : false;
+}
+
+console.log(isPalindrome(101));
+console.log(isPalindrome("101-"));
+console.log(isPalindrome(1987));
+console.log(isPalindrome(121));
